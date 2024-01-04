@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import {effect,reactive,computed} from "../../dist/mini-vue.esm-bundler.js";
+    const value = reactive({
+      foo: 1,
+    });
+
+    const getter = computed(() => {
+      return value.foo;
+    });
+
+    value.foo = 2;
+    console.log(getter.value);
+    console.log(getter.value);
+  </script>
+</body>
+
+</html>
